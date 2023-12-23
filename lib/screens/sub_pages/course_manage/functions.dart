@@ -72,13 +72,20 @@ funAddTopic(
     required paperId,
     required courseId,
     required moduleId,
+    required videoUrls,
     required context}) async {
   final apiCall = ApiClient();
   const url = '/api/cources';
   final body = {
-    'strCourse': topicName,
+    "strTopic": topicName,
+    "strCourseId": courseId,
+    "strPaperId": paperId,
+    "strModuleId": moduleId,
+    "arrVideo": videoUrls
   };
+
   final response = await apiCall.post(endpoint: url, data: body);
+
   if (response.statusCode == 200) {
     showSnackBar(context, 'Success', kSnackBarSuccessColor);
   } else if (response.statusCode == 400) {

@@ -11,8 +11,12 @@ class LocalDatabase {
 
 //To add user Details
   Future<void> addUserDetails({required String userToken}) async {
+    print('adding tocken');
+
     final loginDb = Hive.box('loginDb');
     await loginDb.put('userTokenKey', userToken);
+    print('printing tocken');
+
     await getUserDetails();
   }
 
@@ -21,7 +25,7 @@ class LocalDatabase {
     final loginDb = Hive.box('loginDb');
     final userToken = loginDb.get('userTokenKey');
     loginToken = userToken ?? '';
-    // print('custUserToken : $custUserToken');
+    print('custUserToken : $userToken');
   }
 
 // // To clear local db when user logs out

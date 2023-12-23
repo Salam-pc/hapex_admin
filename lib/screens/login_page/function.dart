@@ -11,9 +11,11 @@ doLogin({required username, required password, required context}) async {
     'username': username,
     'password': password,
   };
-  print('$username  hjdshs $password');
+
   if (username == 'jabir' && password == '123456') {
     showSnackBar(context, 'Login Successfull', kSnackBarSuccessColor);
+    LocalDatabase().addUserDetails(userToken: 'tempToken');
+
     AppRoutes.makeFirst(context, HomePage());
     print('went to home page');
   } else {

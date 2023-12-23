@@ -2,10 +2,11 @@
 
 import 'package:hapex_admin/core/constants.dart';
 import 'package:hapex_admin/screens/homepage/widget.dart';
-import 'package:hapex_admin/screens/course_manage/add_courses.dart';
-import 'package:hapex_admin/screens/course_manage/add_module.dart';
-import 'package:hapex_admin/screens/course_manage/add_papers.dart';
-import 'package:hapex_admin/screens/course_manage/add_topic.dart';
+import 'package:hapex_admin/screens/sub_pages/add_exams.dart';
+import 'package:hapex_admin/screens/sub_pages/course_manage/add_courses.dart';
+import 'package:hapex_admin/screens/sub_pages/course_manage/add_module.dart';
+import 'package:hapex_admin/screens/sub_pages/course_manage/add_papers.dart';
+import 'package:hapex_admin/screens/sub_pages/course_manage/add_topic.dart';
 import 'package:hapex_admin/screens/sub_pages/manage_subscription.dart';
 import 'package:hapex_admin/screens/sub_pages/user_details.dart';
 import 'package:hapex_admin/screens/sub_pages/verify_user.dart';
@@ -22,6 +23,7 @@ class HomePage extends StatelessWidget {
     {'buttonText': 'Add Papers', 'page': AddPapers()},
     {'buttonText': 'Add Modules', 'page': AddModule()},
     {'buttonText': 'Add Topic', 'page': AddTopic()},
+    {'buttonText': 'Create Exams', 'page': CreateExams()},
   ];
 
   @override

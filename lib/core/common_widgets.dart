@@ -30,13 +30,15 @@ class TextFieldWidget extends StatelessWidget {
   final hintText;
   final prefixIcon;
   final isPassword;
+  final minLines;
   const TextFieldWidget(
       {super.key,
       required this.controller,
       required this.validatorMessage,
       required this.hintText,
       this.prefixIcon,
-      this.isPassword});
+      this.isPassword,
+      this.minLines = 1});
 
   @override
   Widget build(BuildContext context) {
@@ -47,6 +49,8 @@ class TextFieldWidget extends StatelessWidget {
           controller: controller,
           cursorColor: Colors.black,
           obscureText: isPassword ?? false,
+          minLines: minLines,
+          maxLines: minLines,
           style: TextStyle(
               color: kTextBlackColor,
               fontSize: 19,
