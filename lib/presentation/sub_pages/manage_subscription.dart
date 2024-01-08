@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hapex_admin/core/constants.dart';
 import 'package:hapex_admin/core/function.dart';
-import 'package:hapex_admin/screens/sub_pages/functions.dart';
+import 'package:hapex_admin/presentation/sub_pages/functions.dart';
 import 'package:video_player/video_player.dart';
 
 class ManageSubscription extends StatelessWidget {

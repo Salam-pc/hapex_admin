@@ -75,7 +75,7 @@ funAddTopic(
     required videoUrls,
     required context}) async {
   final apiCall = ApiClient();
-  const url = '/api/cources';
+  const url = '/api/courses';
   final body = {
     "strTopic": topicName,
     "strCourseId": courseId,

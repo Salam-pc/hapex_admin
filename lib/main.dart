@@ -1,7 +1,7 @@
 import 'package:hapex_admin/core/constants.dart';
 import 'package:hapex_admin/core/db_functions.dart';
 import 'package:flutter/material.dart';
-import 'package:hapex_admin/screens/splash_screen/animated_splash_screen.dart';
+import 'package:hapex_admin/presentation/splash_screen/animated_splash_screen.dart';
 
 void main() {
   LocalDatabase().dataBaseInitialise();

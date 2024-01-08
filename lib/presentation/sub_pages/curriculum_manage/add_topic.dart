@@ -3,7 +3,7 @@ import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:hapex_admin/core/common_widgets.dart';
 import 'package:hapex_admin/core/constants.dart';
 import 'package:hapex_admin/core/function.dart';
-import 'package:hapex_admin/screens/sub_pages/course_manage/functions.dart';
+import 'package:hapex_admin/presentation/sub_pages/curriculum_manage/functions.dart';
 
 class AddTopic extends StatelessWidget {
   AddTopic({super.key});

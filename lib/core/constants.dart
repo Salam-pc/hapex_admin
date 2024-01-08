@@ -10,6 +10,13 @@ Color kBGWhiteColor = Colors.white;
 Color klightGreyColor = const Color.fromARGB(255, 231, 231, 231);
 Color splashBGColor = Color(0xFFECECEC);
 
+class Pallete {
+  static const Color kAppBGColor = Color(0xFFF5F9FF);
+  static const Color kMainButtonColor = Color(0xFF1F3B6F);
+  static const Color kButtonGradient1 = Color(0xFF937EB7);
+  static const Color kButtonGradient2 = Color(0xFF404E84);
+}
+
 // Snack Bar Colors
 Color kSnackBarSuccessColor = const Color(0xFFFDB913);
 Color kSnackBarErrorColor = const Color(0xFFFF4343);

@@ -57,11 +57,13 @@ class CreateExams extends StatelessWidget {
               Text('Exam Description'),
               kSizedBoxHeight(height: 5),
               TextFieldWidget(
-                  controller: examDescription,
-                  validatorMessage: 'Please enter test Description',
-                  hintText: 'Test Description',
-                  prefixIcon: Feather.file_text,
-                  minLines: 5),
+                controller: examDescription,
+                validatorMessage: 'Please enter test Description',
+                hintText: 'Test Description',
+                prefixIcon: Feather.file_text,
+                minLines: 5,
+                textInputType: TextInputType.multiline,
+              ),
               kSizedBoxHeight(height: 10),
               ElevatedButton(
                 onPressed: () {},

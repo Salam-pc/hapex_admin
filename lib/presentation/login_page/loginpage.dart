@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:hapex_admin/core/common_widgets.dart';
 import 'package:hapex_admin/core/constants.dart';
-import 'package:hapex_admin/screens/login_page/function.dart';
+import 'package:hapex_admin/presentation/login_page/function.dart';
 
 class LoginPage extends StatelessWidget {
   LoginPage({super.key});
@@ -17,7 +17,11 @@ class LoginPage extends StatelessWidget {
       body: Form(
         key: _loginFormKey,
         child: SingleChildScrollView(
-          child: SizedBox(
+          child: Container(
+            decoration: const BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage('assets/images/bg_vector.png'),
+                    fit: BoxFit.cover)),
             width: double.infinity,
             child: Padding(
               padding:

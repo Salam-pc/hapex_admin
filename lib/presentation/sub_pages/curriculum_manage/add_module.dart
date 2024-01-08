@@ -1,7 +1,7 @@
 import 'package:hapex_admin/core/common_widgets.dart';
 import 'package:hapex_admin/core/constants.dart';
 import 'package:hapex_admin/core/function.dart';
-import 'package:hapex_admin/screens/sub_pages/course_manage/functions.dart';
+import 'package:hapex_admin/presentation/sub_pages/curriculum_manage/functions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 
@@ -71,6 +71,8 @@ class AddModule extends StatelessWidget {
                                 }).toList(),
                               ),
                               kSizedBoxHeight(height: 10),
+
+                              //based on the condition of choosed course nide/show below dropdown
                               Text('Select Paper'),
                               kSizedBoxHeight(height: 5),
                               DropdownButton(
@@ -80,7 +82,7 @@ class AddModule extends StatelessWidget {
                                   dropdownRefreshVariable.notifyListeners();
                                 },
                                 value: paperId.isNotEmpty ? paperId : null,
-                                hint: const Text('select Paper'),
+                                hint: const Text('select Paper have'),
                                 items: paperList
                                     .map<DropdownMenuItem<String>>((items) {
                                   return DropdownMenuItem<String>(

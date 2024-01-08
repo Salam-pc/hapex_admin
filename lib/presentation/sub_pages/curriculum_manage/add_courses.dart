@@ -1,15 +1,17 @@
 import 'package:hapex_admin/core/common_widgets.dart';
 import 'package:hapex_admin/core/constants.dart';
 import 'package:hapex_admin/core/function.dart';
-import 'package:hapex_admin/screens/sub_pages/course_manage/functions.dart';
+import 'package:hapex_admin/presentation/sub_pages/curriculum_manage/functions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
+import 'package:hapex_admin/presentation/widgets/gradient_button.dart';
 
 class AddCourse extends StatelessWidget {
   AddCourse({super.key});
 
   final TextEditingController courseName = TextEditingController();
   final TextEditingController courseDescription = TextEditingController();
+  final TextEditingController courseCost = TextEditingController();
   final _courseFormKey = GlobalKey<FormState>();
 
   @override
@@ -51,34 +53,38 @@ class AddCourse extends StatelessWidget {
                       hintText: 'course description',
                       prefixIcon: Feather.file_text),
                   kSizedBoxHeight(height: 10),
-                  ElevatedButton(
-                    onPressed: () {
-                      if (_courseFormKey.currentState!.validate()) {
-                        funAddCourse(
-                            courseName: courseName.text,
-                            courseDescription: courseDescription,
-                            context: context);
-                      }
-                    },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: kMainBlueColor,
-                      elevation: 0,
-                      padding: const EdgeInsets.symmetric(vertical: 15),
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10)),
-                    ),
-                    child: const Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text('Save',
-                            style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold,
-                                letterSpacing: 1,
-                                color: Colors.white)),
-                      ],
-                    ),
+                  Text('Price'),
+                  TextFieldWidget(
+                    controller: courseCost,
+                    validatorMessage: 'Please enter the price',
+                    hintText: 'course price',
+                    prefixIcon: Feather.file_text,
+                    textInputType: TextInputType.number,
                   ),
+                  kSizedBoxHeight(height: 10),
+                  DropdownButtonFormField(
+                    items: [
+                      'Yes',
+                      'No',
+                    ].map((item) {
+                      return DropdownMenuItem(
+                        value: item,
+                        child: Text(item),
+                      );
+                    }).toList(),
+                    onChanged: (value) {},
+                  ),
+                  kSizedBoxHeight(height: 10),
+                  GradientButton(
+                      onPressed: () {
+                        if (_courseFormKey.currentState!.validate()) {
+                          funAddCourse(
+                              courseName: courseName.text,
+                              courseDescription: courseDescription,
+                              context: context);
+                        }
+                      },
+                      buttonName: 'Save'),
                 ],
               ),
             ),

@@ -31,6 +31,7 @@ class TextFieldWidget extends StatelessWidget {
   final prefixIcon;
   final isPassword;
   final minLines;
+  final TextInputType textInputType;
   const TextFieldWidget(
       {super.key,
       required this.controller,
@@ -38,7 +39,8 @@ class TextFieldWidget extends StatelessWidget {
       required this.hintText,
       this.prefixIcon,
       this.isPassword,
-      this.minLines = 1});
+      this.minLines = 1,
+      this.textInputType = TextInputType.emailAddress});
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +50,7 @@ class TextFieldWidget extends StatelessWidget {
       child: TextFormField(
           controller: controller,
           cursorColor: Colors.black,
-          obscureText: isPassword ?? false,
+          // obscureText: isPassword ?? false,
           minLines: minLines,
           maxLines: minLines,
           style: TextStyle(
@@ -56,7 +58,7 @@ class TextFieldWidget extends StatelessWidget {
               fontSize: 19,
               fontWeight: FontWeight.w500,
               letterSpacing: 1),
-          keyboardType: TextInputType.emailAddress,
+          keyboardType: textInputType,
           onChanged: (String name) {},
           onTap: () {},
           validator: (value) {
